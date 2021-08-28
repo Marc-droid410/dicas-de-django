@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import AuditEntry
+
+
+@admin.register(AuditEntry)
+class AuditEntryAdmin(admin.ModelAdmin):
+    list_display = ('action', 'username', 'ip', 'created')
+    list_filter = ('action',)
