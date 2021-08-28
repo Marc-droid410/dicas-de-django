@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def logged(request):
+    template_name = 'accounts/logged.html'
+    return render(request, template_name)
