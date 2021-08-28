@@ -36,8 +36,9 @@ class MyLoginView(LoginView):
 
     def form_valid(self, form):
         """Security check complete. Log the user in."""
-        user = auth_login(self.request, form.get_user())
-        # Zerar o AuditEntry
+        auth_login(self.request, form.get_user())
+        user = form.get_user()
+        # Zera o AuditEntry
         AuditEntry.objects.filter(
             username=user.username,
             action='user_login_password_failed'
