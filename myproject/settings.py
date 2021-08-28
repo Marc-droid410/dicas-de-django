@@ -53,10 +53,11 @@ INSTALLED_APPS = [
     'django_filters',
     'django_seed',
     # my apps
-    'myproject.travel',
+    'myproject.accounts',
     'myproject.ecommerce',
     'myproject.event',
     'myproject.product',
+    'myproject.travel',
 ]
 
 MIDDLEWARE = [
