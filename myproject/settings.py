@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # postgres
+    'django.contrib.postgres',
     # 3rd partys
     'debug_toolbar',
     'django_extensions',

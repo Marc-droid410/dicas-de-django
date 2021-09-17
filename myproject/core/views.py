@@ -42,6 +42,14 @@ def article_list(request):
     template_name = 'core/article_list.html'
     object_list = Article.objects.all()
 
+    search = request.GET.get('search')
+
+    if search:
+        object_list = object_list.filter(
+            Q(title__unaccent__icontains=search) |
+            Q(subtitle__unaccent__icontains=search)
+        )
+
     start_date = request.GET.get('start_date')
     end_date = request.GET.get('end_date')
 
